@@ -1,0 +1,21 @@
+
+
+var arr=[['','','',''],['','','',''],['','','',''],['','','','']],i,j,score=0;
+
+var count=14,m,u,t=0,c=[['','','',''],['','','',''],['','','',''],['','','','']];
+
+var highsc=" ",hg= new Date();
+
+window.onload=function go(){      
+	gee();      
+};
+
+function gee(){
+var k,d="  ",e;
+arr=[['','','',''],['','','',''],['','','',''],['','','','']];
+c=[['','','',''],['','','',''],['','','',''],['','','','']];
+var tell,ch;
+ch=1000*24*365*60*60;
+tell=Math.round(hg.getTime()/ ch);
+	if(score!=0)
+	highsc+="</br>"+score+" ----------->  "+"Time"+"   " +hg.getHours()+":"+hg.getMinutes()+":"+hg.getSeconds()+"</br>";
