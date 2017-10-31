@@ -1,0 +1,142 @@
+
+score=0;
+r=" ";
+k=Math.floor((Math.random() * 4) + 0);
+e=Math.floor((Math.random() * 4) + 0);
+if(e==k)
+{
+	if(k>=0&&k<3)
+		{k++;}
+	else
+		k--;
+}
+arr[k][e]=2;
+
+arr[e][k]=2;
+i=0;
+while(i<4)
+{	d=d+"<tr class=row>";
+ j=0;
+		while(j<4)
+
+		{d+="<td >"+ arr[i][j]+"</td>";
+			c[i][j]=arr[i][j];
+		j++;
+	}
+	d+="</tr>";
+		
+
+
+	i++;
+}
+document.getElementById("11").innerHTML=d;
+document.getElementById("high").innerHTML=highsc;
+};
+
+
+//to find key
+$(document).ready(function()
+{
+	
+
+$(document).keydown(function(event){
+    
+    switch(event.keyCode)
+	{
+
+		case 38:
+		up();
+		break;
+
+		case 40:
+		dow();
+		break;
+
+		case 37:
+		le();
+		break;
+
+		case 39:
+		ri();
+		break;
+
+	}
+
+	});
+
+ });
+
+//for up move
+function up()
+{
+
+u=0;
+	//function to shift empty spaces
+while(u<3)
+{
+		i=0;
+
+	while(i<3)
+	{	
+		j=0;
+ 		
+			while(j<4)
+			{
+				if(arr[i][j]==0)
+					{
+						m=i;
+							while(m<3)
+							{
+
+								arr[m][j]=arr[m+1][j];
+								m++;
+							if(m==3)
+								{arr[m][j]='';}
+						}
+
+			}
+
+
+		j++;
+	}
+
+	i++;
+
+}
+u++;
+}
+
+//function to add same elements
+i=0;
+
+while(i<3)
+	{	
+		j=0;
+ 		
+			while(j<4)
+			{
+				if((arr[i][j]==arr[i+1][j])&&arr[i][j]!='')
+					{
+						arr[i][j]=arr[i][j]*2;
+						score+=arr[i][j];
+
+						m=i+1;
+							while(m<3)
+							{
+								arr[m][j]=arr[m+1][j];
+								m++;
+							
+						}
+						if(m==3)
+								{arr[m][j]='';}
+
+			}
+		j++;
+	}
+
+	i++;
+}
+disp();
+
+}
+
